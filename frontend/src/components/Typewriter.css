@@ -1,0 +1,36 @@
+/* src/components/Typewriter.css */
+.typewriter-container {
+    display: flex;
+    justify-content: center; /* Center the text container */
+    width: 100%; /* Take up full width */
+}
+
+.typewriter {
+    display: inline-block;
+    font-size: 4rem; /* Larger text */
+    font-weight: bold;
+    color: white; /* Solid white text */
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    text-align: left; /* Ensure text is left-aligned */
+}
+
+.typewriter::after {
+    content: '|'; /* Cursor */
+    position: absolute;
+    right: 0;
+    color: #f0a500; /* Orange cursor */
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
