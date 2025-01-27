@@ -1,0 +1,44 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.6rem;
+    background: rgba(52, 52, 52, 0.6); /* Semi-transparent dark background */
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Subtle shadow for depth */
+    position: fixed;
+    top: 20px; /* Space from the top */
+    left: 0;
+    right: 0;
+    width: auto; /* Remove full width */
+    max-width: 500px; /* Limit the width */
+    margin: 0 auto; /* Center the navbar */
+    z-index: 1000;
+    border-radius: 15px; /* Rounded corners for floating effect */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* Subtle border for glass effect */
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;/* Spacing between links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff; /* White text */
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f0a500; /* Orange color on hover */
+}
+
+.logo-img {
+    height: 36px; /* Adjust the height as needed */
+    width: auto;
+    vertical-align: middle;
+}
+
