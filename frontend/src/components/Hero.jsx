@@ -1,4 +1,4 @@
-import './mobHero.css';
+import './Hero.css';
 import logoLT from '../assets/logoLT.png';
 import MTMB from '../assets/mtmb.svg';
 
