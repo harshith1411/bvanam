@@ -1,44 +1,70 @@
+@font-face {
+    font-family: 'TT Ramillas';
+    src: url('../assets/fonts/TT-Ramillas.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Ensures text is visible while the font loads */
+}
+
 .navbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 0.6rem;
-    background: rgba(52, 52, 52, 0.6); /* Semi-transparent dark background */
-    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Subtle shadow for depth */
+    padding: 0.3rem;
+    border-color: black;
     position: fixed;
-    top: 20px; /* Space from the top */
+    top: 20px;
     left: 0;
     right: 0;
-    width: auto; /* Remove full width */
-    max-width: 500px; /* Limit the width */
-    margin: 0 auto; /* Center the navbar */
+    width: auto;
+    max-width: 550px;
+    margin: 0 auto;
     z-index: 1000;
-    border-radius: 15px; /* Rounded corners for floating effect */
-    border: 1px solid rgba(255, 255, 255, 0.6); /* Subtle border for glass effect */
+    border-radius: 15px;
+    outline: 1px solid #202020;
 }
 
 .nav-links {
     display: flex;
     gap: 2rem;
-    align-items: center;/* Spacing between links */
+    align-items: center;
+}
+
+.nav-separate {
+    position: relative; /* Required for pseudo-element positioning */
+    padding: 0.3rem;
+    overflow: hidden; /* Hide overflowing pseudo-element */
+}
+
+/* Exclude the logo container from the hover effect */
+.nav-separate:not(.logo-container)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start from the left */
+    width: 100%;
+    height: 100%;
+    background-color: #e7dcc8;
+    transition: transform 0.3s ease; /* Smooth transition */
+    z-index: 0; /* Place behind the text */
+}
+
+.nav-separate:not(.logo-container):hover::before {
+    transform: translateX(100%); /* Slide in from left to right */
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #fff; /* White text */
+    color: #202020;
     font-size: 1rem;
-    font-family: 'Poppins', sans-serif; /* Modern font */
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #f0a500; /* Orange color on hover */
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    position: relative; /* Ensure text stays above the pseudo-element */
+    z-index: 1; /* Ensure text is above the background */
 }
 
 .logo-img {
-    height: 36px; /* Adjust the height as needed */
+    height: 36px;
     width: auto;
     vertical-align: middle;
 }
-

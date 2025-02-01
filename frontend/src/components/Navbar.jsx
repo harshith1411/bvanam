@@ -1,17 +1,27 @@
 // src/components/Navbar.jsx
-import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import logo from '../assets/logo.png'; // Import the logo
+import logo from '../assets/logoLT.png'; // Import the logo
 
 const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="nav-links">
-                <Link to="/"><img src={logo} alt="Logo" className="logo-img" /></Link>
-                <Link to="/gnapakalu">Gnapakalu</Link>
-                <Link to="/muchatlu">Muchatlu</Link>
-                <Link to="/parichayalu">Parichayalu</Link>
+                {/* Add logo-container class to the logo's nav-separate */}
+                <div className="nav-separate logo-container">
+                    <Link to="/">
+                        <img src={logo} alt="Logo" className="logo-img" />
+                    </Link>
+                </div>
+                <div className="nav-separate">
+                    <Link to="/gnapakalu">Gnapakalu</Link>
+                </div>
+                <div className="nav-separate">
+                    <Link to="/muchatlu">Muchatlu</Link>
+                </div>
+                <div className="nav-separate">
+                    <Link to="/parichayalu">Parichayalu</Link>
+                </div>
             </div>
         </nav>
     );

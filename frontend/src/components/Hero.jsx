@@ -21,30 +21,30 @@ const Hero = () => {
 
     return (
         <div className="hero">
-            <div className="hero-content">
-                <img
-                    src={logo}
-                    alt="Logo"
-                    className="hero-logo"
-                    style={{
-                        opacity: 1 - scrollProgress,
-                        transform: `scale(${1 - scrollProgress * 0.2})`, // Scale down logo as user scrolls
-                    }}
-                />
-                <h1 className="hero-title">
-                    <span>#ManaTelugu</span>
-                    <span>ManaBrindavanam</span>
-                </h1>
-                <button className="hero-button">
-                    Explore More
-                    <span className="button-icon">→</span> {/* Add an arrow for visual interest */}
-                </button>
-            </div>
+            {/*<div className="hero-content">*/}
+            {/*    <div className="hero-telugu">*/}
+            {/*        <h1 className="heading-telugu">మన తెలుగు</h1>*/}
+            {/*        <h1 className="heading-telugu">మన</h1>*/}
+            {/*    </div>*/}
 
-            <div className="floating-items">
-                <img src={flute} alt="Flute" className="flute" />
-                <img src={feather} alt="Peacock Feather" className="feather" />
-            </div>
+            {/*    <img*/}
+            {/*        src={logo}*/}
+            {/*        alt="Logo"*/}
+            {/*        className="hero-logo"*/}
+            {/*        style={{*/}
+            {/*            opacity: 1 - scrollProgress,*/}
+            {/*            transform: `scale(${1 - scrollProgress * 0.2})`, // Scale down logo as user scrolls*/}
+            {/*        }}*/}
+            {/*    />*/}
+            {/*    <h1 className="hero-title">*/}
+            {/*        <span>#AsaluMajaTeluguRa</span>*/}
+            {/*    </h1>*/}
+            {/*</div>*/}
+
+            {/*<div className="floating-items">*/}
+            {/*    <img src={flute} alt="Flute" className="flute" />*/}
+            {/*    <img src={feather} alt="Peacock Feather" className="feather" />*/}
+            {/*</div>*/}
         </div>
     );
 };

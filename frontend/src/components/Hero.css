@@ -3,79 +3,49 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: white;
+    color: #e0e0e0;
     text-align: center;
     position: relative;
     overflow: hidden;
     padding: 2rem;
-    background: url('../assets/bg.png') no-repeat center center; /* Background image positioned at the center */
+    /*background-color: #EAEDE9;*/
+    background: url('../assets/bg.svg'); /* Background image positioned at the center */
     background-size: cover; /* Ensure the background image covers the full area */
-    background-attachment: fixed;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.2; /* Subtle texture overlay */
-    z-index: 1; /* Behind content */
-    background: url('../assets/bg.png');
-    filter: brightness(0.01);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .hero-content {
     z-index: 2; /* Ensure content stays on top */
-    animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
     display: flex;
     flex-direction: column;
     align-items: center; /* Center content horizontally */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add depth to the text */
+    /*text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); !* Add depth to the text *!*/
 }
 
 .hero-logo {
-    height: 120px; /* Slightly larger logo */
+    height: 180px;
     width: auto;
     margin-bottom: 2rem;
     transition: opacity 0.5s ease, transform 0.5s ease;
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5)); /* Add shadow for floating effect */
+    /*filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5)); !* Add shadow for floating effect *!*/
 }
 
 .hero h1 {
     font-size: 4rem; /* Larger text */
     margin-bottom: 1rem;
-    font-family: 'Poppins', sans-serif; /* Modern font */
-    color: white; /* Solid white text */
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.8); /* Text shadow for clarity */
+    color: #333; /* Solid white text */
 }
 
-.hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.9); /* Slight transparency for text */
+.hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
 }
 
-.hero button {
-    padding: 1rem 2.5rem;
-    font-size: 1.2rem;
-    color: white;
-    background: rgba(255, 165, 0, 0.8); /* Semi-transparent orange */
-    border: none;
-    cursor: pointer;
-    border-radius: 50px; /* Rounded button */
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    font-family: 'Poppins', sans-serif; /* Modern font */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for floating effect */
-}
-
-.hero button:hover {
-    background-color: rgba(255, 140, 0, 0.9); /* Slightly darker on hover */
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+.hero-telugu {
+    font-family: 'Anek+Telugu', serif;
+    font-weight: 400;
 }
 
 @keyframes fadeIn {
