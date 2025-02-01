@@ -1,7 +1,5 @@
 /* src/index.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=NTR&display=swap');
 
 * {
   margin: 0;
@@ -24,9 +22,19 @@ body::-webkit-scrollbar {
 body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  animation: fadeIn 1s ease-out forwards;
 }
 
 /* src/index.css */
 html {
   scroll-behavior: smooth;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
