@@ -1,12 +1,11 @@
-// src/pages/Gnapakalu.jsx
-import React from 'react';
+import PhotoGallery from '../components/PhotoGallery.jsx';
+import { ImageProvider } from "../components/ImageContext";
 
 const Gnapakalu = () => {
     return (
-        <div style={{ height: '100vh', background: '#f4f4f4', padding: '2rem' }}>
-            <h1>Gnapakalu</h1>
-            <p>This is the Gnapakalu page content.</p>
-        </div>
+        <ImageProvider>
+            <PhotoGallery />
+        </ImageProvider>
     );
 };
 

@@ -1,50 +1,34 @@
-import React, { useState, useEffect } from 'react';
 import './Hero.css';
-import logo from '../assets/logo.png'; // Import the logo
-import flute from '../assets/flute.png'; // Import the flute image
-import feather from '../assets/feather.png'; // Import the feather image
+import logoLT from '../assets/logoLT.png';
+import MTMB from '../assets/mtmb.svg';
 
 const Hero = () => {
-    const [scrollProgress, setScrollProgress] = useState(0);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollY = window.scrollY;
-            const heroHeight = window.innerHeight;
-            const progress = Math.min(scrollY / heroHeight, 1); // Normalize scroll progress (0 to 1)
-            setScrollProgress(progress);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     return (
         <div className="hero">
-            <div className="hero-content">
-                <img
-                    src={logo}
-                    alt="Logo"
-                    className="hero-logo"
-                    style={{
-                        opacity: 1 - scrollProgress,
-                        transform: `scale(${1 - scrollProgress * 0.2})`, // Scale down logo as user scrolls
-                    }}
-                />
-                <h1 className="hero-title">
-                    <span>#ManaTelugu</span>
-                    <span>ManaBrindavanam</span>
-                </h1>
-                <button className="hero-button">
-                    Explore More
-                    <span className="button-icon">→</span> {/* Add an arrow for visual interest */}
-                </button>
+
+            <img
+                src={logoLT}
+                alt="Logo"
+                className="hero-logo"
+            />
+
+            <div className="hero-MI">
+                <h1>MANADE<br /><span className="MI-highlight">IDHANTA</span></h1>
             </div>
 
-            <div className="floating-items">
-                <img src={flute} alt="Flute" className="flute" />
-                <img src={feather} alt="Peacock Feather" className="feather" />
+            <h1 className="hero-AM">
+               Asalu<br />Maja<br /><span className="AM-highlight">Telugu</span><br />Ra
+            </h1>
+
+            <div className="MTMB-container">
+                <img
+                    src={MTMB}
+                    alt="MTMB"
+                    className="hero-MTMB"
+                />
             </div>
+
         </div>
     );
 };
