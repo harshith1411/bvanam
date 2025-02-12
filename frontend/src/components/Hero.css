@@ -27,7 +27,6 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #e0e0e0;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -171,13 +170,13 @@
 @media (max-width: 768px) {
     .hero-MI {
         font-size: 2.5rem; /* Reduced for mobile */
-        top: 60%; /* Adjusted for mobile */
+        top: 50%; /* Adjusted for mobile */
         right: 20%; /* Adjusted for mobile */
     }
 
     .hero-AM {
         font-size: 3rem; /* Reduced for mobile */
-        top: 80%; /* Adjusted for mobile */
+        top: 70%; /* Adjusted for mobile */
         left: 10%; /* Adjusted for mobile */
     }
 

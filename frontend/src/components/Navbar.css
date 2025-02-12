@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'TT Ramillas';
-    src: url('../assets/fonts/TT-Ramillas.ttf') format('truetype');
+    src: url('../assets/fonts/TT Ramillas Trial Black.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap; /* Ensures text is visible while the font loads */
@@ -11,7 +11,6 @@
     justify-content: space-around;
     align-items: center;
     padding: 0.3rem;
-    border-color: black;
     position: fixed;
     top: 20px;
     left: 0;
@@ -34,6 +33,11 @@
     position: relative; /* Required for pseudo-element positioning */
     padding: 0.3rem;
     overflow: hidden; /* Hide overflowing pseudo-element */
+    display: flex; /* Ensure the entire area is clickable */
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Expands clickable area */
+    width: 100%;
 }
 
 /* Exclude the logo container from the hover effect */
