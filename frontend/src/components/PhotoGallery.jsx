@@ -4,8 +4,8 @@ import "react-loading-skeleton/dist/skeleton.css";
 import "./PhotoGallery.css";
 import { useImageContext } from "./ImageContext";
 
-const supabaseUrl = import.meta.env.BVANAM_SUPABASE_URL;
-const publicAnonKey = import.meta.env.BVANAM_SUPABASE_ANON_KEY;
+const supabaseUrl = import.meta.env.VITE_BVANAM_SUPABASE_URL;
+const publicAnonKey = import.meta.env.VITE_BVANAM_SUPABASE_ANON_KEY;
 
 // Initialize Supabase client
 const supabase = createClient(supabaseUrl, publicAnonKey);
