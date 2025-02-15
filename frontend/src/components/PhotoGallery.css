@@ -38,6 +38,9 @@
     border-radius: 10px;
     overflow: hidden;
     position: relative; /* Ensure the pseudo-element is positioned relative to the item */
+    border-color: #fff8e8;
+    border-style: solid;
+    border-width: 0.5px;
 }
 
 .masonry-item img {
@@ -55,14 +58,14 @@
     left: 0;
     width: 100%; /* Make the width of the caption equal to the width of the photo */
     height: auto; /* Adjust height based on content */
-    background-color: #bccbea;
+    background-color: #fff8e8;
     border-radius: 0 0 10px 10px;
     animation: slideUp 0.5s ease-in-out forwards;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1rem;
-    color: #202020;
+    color: #1d1d1b;
     padding: 10px;
     box-sizing: border-box;
     font-family: 'TT Ramillas', sans-serif; /* Apply the custom font */
@@ -113,5 +116,8 @@
 @media (max-width: 768px) {
     .masonry-grid {
         column-count: 2; /* 2 columns for mobile */
+    }
+    .PhotoGallery {
+        margin-top: 70px;
     }
 }

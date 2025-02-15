@@ -1,9 +1,9 @@
 // src/pages/Gnapakalu.jsx
-import React from 'react';
+import 'react';
 
 const Parichayalu = () => {
     return (
-        <div style={{ height: '100vh', background: '#f4f4f4', padding: '2rem' }}>
+        <div style={{ height: '100vh', padding: '2rem' }}>
             <h1>Parichayalu</h1>
             <p>This is the Parichayalu page content.</p>
         </div>

@@ -1,6 +1,6 @@
 import './Hero.css';
-import logoLT from '../assets/logoLT.png';
-import MTMB from '../assets/mtmb.svg';
+import logoLT from '../assets/logo.png';
+import MTMB from '../assets/mtmb-darkbg.png';
 
 const Hero = () => {
 
