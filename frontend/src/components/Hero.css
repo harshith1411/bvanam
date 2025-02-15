@@ -170,8 +170,8 @@
 @media (max-width: 768px) {
     .hero-MI {
         font-size: 2.5rem; /* Reduced for mobile */
-        top: 50%; /* Adjusted for mobile */
-        right: 20%; /* Adjusted for mobile */
+        top: 52%; /* Adjusted for mobile */
+        right: 10%; /* Adjusted for mobile */
     }
 
     .hero-AM {
