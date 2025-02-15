@@ -1,14 +1,14 @@
 // src/components/MobileNavbar.jsx
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './MobileNavbar.css'; // You can use the same CSS or create a new one
+import './MobileNavbar.css';
 
 const MobileNavbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <nav className="mobile-navbar">
-            <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        <>
+            <button className="floating-button" onClick={() => setMenuOpen(!menuOpen)}>
                 ☰
             </button>
             {menuOpen && (
@@ -19,7 +19,7 @@ const MobileNavbar = () => {
                     <Link to="/parichayalu" onClick={() => setMenuOpen(false)}>Parichayalu</Link>
                 </div>
             )}
-        </nav>
+        </>
     );
 };
 

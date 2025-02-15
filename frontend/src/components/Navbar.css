@@ -61,7 +61,7 @@
     text-decoration: none;
     color: #202020;
     font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'TT Ramillas', sans-serif;
     box-sizing: border-box;
     position: relative; /* Ensure text stays above the pseudo-element */
     z-index: 1; /* Ensure text is above the background */

@@ -55,13 +55,13 @@
     left: 0;
     width: 100%; /* Make the width of the caption equal to the width of the photo */
     height: auto; /* Adjust height based on content */
-    background-color: rgba(231, 220, 200, 0.75);
+    background-color: #bccbea;
     border-radius: 0 0 10px 10px;
     animation: slideUp 0.5s ease-in-out forwards;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 1rem;
     color: #202020;
     padding: 10px;
     box-sizing: border-box;
@@ -104,16 +104,14 @@
     .masonry-grid {
         column-count: 3; /* 3 columns for tablets */
     }
+
+    .masonry-item:hover::after {
+        font-size: 0.8rem;
+    }
 }
 
 @media (max-width: 768px) {
     .masonry-grid {
         column-count: 2; /* 2 columns for mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    .masonry-grid {
-        column-count: 1; /* 1 column for very small screens */
     }
 }
