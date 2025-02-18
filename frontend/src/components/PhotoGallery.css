@@ -7,40 +7,38 @@
 }
 
 .PhotoGallery {
-    margin-top: 90px; /* Adjust based on the height of your navbar */
-    padding: 20px;
+    margin-top: 90px;
+    padding: 20px 20px 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: calc(100vh - 90px); /* Adjust height to account for the navbar */
-    overflow-y: auto; /* Enable vertical scrolling */
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar for IE & Edge */
+    height: calc(100vh - 90px);
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .PhotoGallery::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+    display: none;
 }
 
 /* Masonry Layout */
 .masonry-grid {
-    column-count: 4; /* Default: 4 columns */
+    column-count: 4;
     column-gap: 15px;
     max-width: 1200px;
     width: 100%;
 }
 
 .masonry-item {
-    display: inline-block; /* Ensures items flow correctly */
+    display: inline-block;
     width: 100%;
-    break-inside: avoid; /* Prevents breaking inside columns */
+    break-inside: avoid;
     margin-bottom: 15px;
     border-radius: 10px;
     overflow: hidden;
-    position: relative; /* Ensure the pseudo-element is positioned relative to the item */
-    border-color: #fff8e8;
-    border-style: solid;
-    border-width: 0.5px;
+    position: relative;
+    border: 0.8px solid #fff8e8;
 }
 
 .masonry-item img {
@@ -48,74 +46,71 @@
     height: auto;
     border-radius: 10px;
     display: block;
+    transition: transform 0.2s ease-in-out;
 }
 
-/* Caption on Hover */
-.masonry-item:hover::after {
-    content: attr(data-caption); /* Use the data-caption attribute */
-    position: absolute;
-    bottom: 0;
+/* Image Modal */
+.image-modal {
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 100%; /* Make the width of the caption equal to the width of the photo */
-    height: auto; /* Adjust height based on content */
-    background-color: #fff8e8;
-    border-radius: 0 0 10px 10px;
-    animation: slideUp 0.5s ease-in-out forwards;
+    width: 100vw;
+    height: 100vh;
+    /*background: rgba(0, 0, 0, 0.8);*/
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
-    color: #1d1d1b;
-    padding: 10px;
-    box-sizing: border-box;
-    font-family: 'TT Ramillas', sans-serif; /* Apply the custom font */
+    z-index: 1003;
+    backdrop-filter: blur(10px); /* Blurred background */
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content img {
+    max-width: 90vw; /* Maximum width of viewport */
+    max-height: 90vh; /* Maximum height of viewport */
+    object-fit: contain; /* Ensures the whole image is visible without cropping */
+    border-radius: 10px;
+    border: 2px solid #fff8e8; /* White border around the image */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
 }
 
 /* Skeleton Loading Effect */
 .skeleton {
     width: 100%;
-    height: 200px; /* Placeholder height */
+    height: 200px;
     border-radius: 10px;
-    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
     background-size: 200% 100%;
     animation: shimmer 1.5s infinite linear;
 }
 
 @keyframes shimmer {
     from {
-        background-position: -200% 0;
-    }
-    to {
         background-position: 200% 0;
     }
-}
-
-/* Slide-up Caption Animation */
-@keyframes slideUp {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
     to {
-        transform: translateY(0);
-        opacity: 1;
+        background-position: -200% 0;
     }
 }
 
 /* Responsive Breakpoints */
 @media (max-width: 1024px) {
     .masonry-grid {
-        column-count: 3; /* 3 columns for tablets */
-    }
-
-    .masonry-item:hover::after {
-        font-size: 0.8rem;
+        column-count: 3;
     }
 }
 
 @media (max-width: 768px) {
     .masonry-grid {
-        column-count: 2; /* 2 columns for mobile */
+        column-count: 2;
     }
     .PhotoGallery {
         margin-top: 70px;

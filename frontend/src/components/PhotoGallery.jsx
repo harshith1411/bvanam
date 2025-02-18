@@ -1,4 +1,4 @@
-import  { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { createClient } from "@supabase/supabase-js";
 import "react-loading-skeleton/dist/skeleton.css";
 import "./PhotoGallery.css";
@@ -42,6 +42,7 @@ const PhotoGallery = () => {
     const [visiblePhotos, setVisiblePhotos] = useState([]);
     const [imageLoadingStatus, setImageLoadingStatus] = useState({});
     const observer = useRef(null);
+    const [selectedImage, setSelectedImage] = useState(null);
 
     useEffect(() => {
         const loadImages = async () => {
@@ -107,6 +108,14 @@ const PhotoGallery = () => {
         }, 500); // Ensure skeleton is shown for at least 3 seconds
     };
 
+    const openImage = (imageSrc) => {
+        setSelectedImage(imageSrc);
+    };
+
+    const closeImage = () => {
+        setSelectedImage(null);
+    };
+
     return (
         <div className="PhotoGallery">
             <div className="masonry-grid">
@@ -119,15 +128,25 @@ const PhotoGallery = () => {
                             id={`photo-${index}`}
                             src={photo.link}
                             alt={`Photo ${index}`}
+                            onClick={() => openImage(photo.link)}
                             onError={() => handleImageError(index)}
                             onLoad={() => handleImageLoad(index)}
                             style={{
                                 display: imageLoadingStatus[index] ? "block" : "none",
+                                cursor: "pointer",
                             }}
                         />
                     </div>
                 ))}
             </div>
+
+            {selectedImage && (
+                <div className="image-modal" onClick={closeImage}>
+                    <div className="modal-content">
+                        <img src={selectedImage} alt="Enlarged" />
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
