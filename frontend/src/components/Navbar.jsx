@@ -1,7 +1,7 @@
 // src/components/Navbar.jsx
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import logo from '../assets/logoLT.png'; // Import the logo
+import logo from '../assets/logo.png'; // Import the logo
 
 const Navbar = () => {
     return (
@@ -13,15 +13,16 @@ const Navbar = () => {
                         <img src={logo} alt="Logo" className="logo-img" />
                     </Link>
                 </div>
-                <div className="nav-separate">
-                    <Link to="/gnapakalu">Gnapakalu</Link>
-                </div>
-                <div className="nav-separate">
-                    <Link to="/muchatlu">Muchatlu</Link>
-                </div>
-                <div className="nav-separate">
-                    <Link to="/parichayalu">Parichayalu</Link>
-                </div>
+                {/* Wrap the entire nav-separate with Link */}
+                <Link to="/gnapakalu" className="nav-separate">
+                    <span>Gnapakalu</span>
+                </Link>
+                <Link to="/muchatlu" className="nav-separate">
+                    <span>Muchatlu</span>
+                </Link>
+                <Link to="/parichayalu" className="nav-separate">
+                    <span>Parichayalu</span>
+                </Link>
             </div>
         </nav>
     );

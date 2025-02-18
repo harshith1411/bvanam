@@ -1,6 +1,7 @@
+import { useNavigate } from 'react-router-dom';
 import './Hero.css';
-import logoLT from '../assets/logoLT.png';
-import MTMB from '../assets/mtmb.svg';
+import logoLT from '../assets/logo.png';
+import MTMB from '../assets/mtmb-darkbg.png';
 
 const Hero = () => {
 
@@ -18,7 +19,7 @@ const Hero = () => {
             </div>
 
             <h1 className="hero-AM">
-               Asalu<br />Maja<br /><span className="AM-highlight">Telugu</span><br />Ra
+                Asalu<br />Maja<br /><span className="AM-highlight">Telugu</span><br />Ra
             </h1>
 
             <div className="MTMB-container">

@@ -6,12 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="f0f390db-447d-4a2c-bb1e-669b0687e962" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/fonts/TT-Ramillas.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Hero.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Hero.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/bg.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Hero.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Hero.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/MobileNavbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/MobileNavbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/MobileNavbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/MobileNavbar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/PhotoGallery.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/PhotoGallery.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/PhotoGallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/PhotoGallery.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +36,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;LightMode&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;DarkMode&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/harshith/Documents/bvanam/frontend/src/assets&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -72,6 +74,8 @@
       <workItem from="1737970025641" duration="27977000" />
       <workItem from="1738398118260" duration="6273000" />
       <workItem from="1738413242000" duration="7417000" />
+      <workItem from="1739605167211" duration="23842000" />
+      <workItem from="1739885960393" duration="349000" />
     </task>
     <servers />
   </component>

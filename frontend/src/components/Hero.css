@@ -31,11 +31,11 @@
     position: relative;
     overflow: hidden;
     padding: 2rem;
-    background-color: #edf0eb;
+    background-color: #1d1d1b;
 }
 
 .hero-logo {
-    height: 15vw;
+    height: 25vw;
     max-height: 190px;
     width: auto;
     position: absolute;
@@ -45,7 +45,7 @@
 }
 
 .hero h1 {
-    color: #202020;
+    color: #fff8e8;
 }
 
 .hero-MI {
@@ -90,7 +90,7 @@
     transform: translate(-50%, -50%);
     width: 110%;
     height: 100%;
-    background-color: #becfbb;
+    background-color: #8ed8f1;
     z-index: -1;
     animation: fillFromLeft 1.2s ease-out forwards;
 }
@@ -110,7 +110,7 @@
     transform: translate(-50%, -50%);
     width: 110%;
     height: 110%;
-    background-color: #e7dcc8;
+    background-color: #f62b04;
     z-index: -1;
     animation: fillFromLeft 1.2s ease-out forwards;
 }
@@ -132,7 +132,7 @@
     left: 44%;
     width: 40%;
     height: 50%;
-    background-color: #bccbea;
+    background-color: #adca56;
     z-index: -1;
     transform-origin: left;
     animation: highlightFill 1.2s ease-out forwards;
@@ -169,14 +169,14 @@
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
     .hero-MI {
-        font-size: 2.5rem; /* Reduced for mobile */
-        top: 50%; /* Adjusted for mobile */
-        right: 20%; /* Adjusted for mobile */
+        font-size: 2rem; /* Reduced for mobile */
+        top: 57%; /* Adjusted for mobile */
+        right: 5%; /* Adjusted for mobile */
     }
 
     .hero-AM {
-        font-size: 3rem; /* Reduced for mobile */
-        top: 70%; /* Adjusted for mobile */
+        font-size: 2.5rem; /* Reduced for mobile */
+        top: 65%; /* Adjusted for mobile */
         left: 10%; /* Adjusted for mobile */
     }
 
