@@ -7,7 +7,6 @@ import { useImageContext } from "./ImageContext";
 const supabaseUrl = import.meta.env.VITE_BVANAM_SUPABASE_URL;
 const publicAnonKey = import.meta.env.VITE_BVANAM_SUPABASE_ANON_KEY;
 
-// Initialize Supabase client
 const supabase = createClient(supabaseUrl, publicAnonKey);
 
 const fetchImages = async () => {
@@ -27,7 +26,7 @@ const fetchImages = async () => {
         }
 
         return data.map(photo => ({
-            link: photo.link, // Ensure correct column mapping
+            link: photo.link,
             year: photo.year,
             event_name: photo.event_name,
         }));
@@ -43,15 +42,19 @@ const PhotoGallery = () => {
     const [imageLoadingStatus, setImageLoadingStatus] = useState({});
     const observer = useRef(null);
     const [selectedImage, setSelectedImage] = useState(null);
+    const [isFlipped, setIsFlipped] = useState(false);
+
+    // Track front image size
+    const frontImageRef = useRef(null);
+    const [frontSize, setFrontSize] = useState({ width: 0, height: 0 });
 
     useEffect(() => {
         const loadImages = async () => {
             const images = await fetchImages();
             setPhotos(images);
-            setVisiblePhotos(images.slice(0, 10)); // Load initial set of images
+            setVisiblePhotos(images.slice(0, 10));
             setLoading(false);
 
-            // Initialize loading status for initial images
             const initialStatus = {};
             images.slice(0, 10).forEach((_, index) => {
                 initialStatus[index] = false;
@@ -72,7 +75,6 @@ const PhotoGallery = () => {
                         return [...prevPhotos, ...uniqueNewPhotos];
                     });
 
-                    // Initialize loading status for new images
                     setImageLoadingStatus(prevStatus => {
                         const newStatus = { ...prevStatus };
                         newVisiblePhotos.forEach((_, i) => {
@@ -105,15 +107,17 @@ const PhotoGallery = () => {
                 ...prevStatus,
                 [index]: true
             }));
-        }, 500); // Ensure skeleton is shown for at least 3 seconds
+        }, 500);
     };
 
-    const openImage = (imageSrc) => {
-        setSelectedImage(imageSrc);
+    const openImage = (photo) => {
+        setSelectedImage(photo);
+        setIsFlipped(false);
     };
 
     const closeImage = () => {
         setSelectedImage(null);
+        setIsFlipped(false);
     };
 
     return (
@@ -128,7 +132,7 @@ const PhotoGallery = () => {
                             id={`photo-${index}`}
                             src={photo.link}
                             alt={`Photo ${index}`}
-                            onClick={() => openImage(photo.link)}
+                            onClick={() => openImage(photo)}
                             onError={() => handleImageError(index)}
                             onLoad={() => handleImageLoad(index)}
                             style={{
@@ -142,8 +146,61 @@ const PhotoGallery = () => {
 
             {selectedImage && (
                 <div className="image-modal" onClick={closeImage}>
-                    <div className="modal-content">
-                        <img src={selectedImage} alt="Enlarged" />
+                    <div
+                        className={`modal-content ${isFlipped ? 'flipped' : ''}`}
+                        onClick={(e) => e.stopPropagation()}
+                        style={{
+                            width: frontSize.width ? `${frontSize.width}px` : "auto",
+                            height: frontSize.height ? `${frontSize.height}px` : "auto",
+                        }}
+                    >
+                        <div className="flip-card">
+                            <div className="flip-card-inner">
+                                {/* Front Side */}
+                                <div className="flip-card-front">
+                                    <img
+                                        ref={frontImageRef}
+                                        src={selectedImage.link}
+                                        alt="Enlarged"
+                                        onLoad={() => {
+                                            setFrontSize({
+                                                width: frontImageRef.current.clientWidth,
+                                                height: frontImageRef.current.clientHeight,
+                                            });
+                                        }}
+                                    />
+                                    {/* Add the "Show Details" button */}
+                                    <button
+                                        className="show-details-button"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setIsFlipped(!isFlipped);
+                                        }}
+                                    >
+                                        Show Details
+                                    </button>
+                                </div>
+                                {/* Back Side */}
+                                <div
+                                    className="flip-card-back"
+                                    style={{
+                                        width: frontSize.width ? `${frontSize.width}px` : "auto",
+                                        height: frontSize.height ? `${frontSize.height}px` : "auto",
+                                    }}
+                                >
+                                    <h3>{selectedImage.event_name}</h3>
+                                    <p>Year: {selectedImage.year}</p>
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setIsFlipped(false);
+                                        }}
+                                    >
+                                        Close Back
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             )}
